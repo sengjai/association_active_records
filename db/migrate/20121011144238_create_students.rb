@@ -8,8 +8,13 @@ class CreateStudents < ActiveRecord::Migration
     create_table :students do |t|
 
       # add columns that you would need for this table
-
-      t.timestamps
+      t.string :first_name
+      t.string :last_name
+      t.string :gender
+      t.string :email
+      t.string :phone
+      t.date :birthday
+      t.timestamps null:false
     end
   end
 end
