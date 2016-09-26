@@ -6,6 +6,10 @@ class Student < ActiveRecord::Base
 	validates :age, numericality: { greater_than: 4}
 	validates :phone, format: { with: /.*\d{3}.*\d{3}.*\d{4}.*/}
 
+
+	has_many :student_teachers
+	has_many :teachers, through: :student_teachers
+
 	def name
 		return "#{self[:first_name]} #{self[:last_name]}"
 	end
